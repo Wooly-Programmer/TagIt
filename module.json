@@ -2,7 +2,7 @@
 	"name": "tagit",
 	"title": "TagIt!",
 	"description": "Adds tags to Journals and Compendiums",
-	"version": "0.2.0",
+	"version": "0.2.1",
 	"author": "atnoslen",
   "manifestPlusVersion": "1.0.0",
 	"esmodules": [
@@ -25,5 +25,5 @@
       }
   ],
   "minimumCoreVersion": "0.5.5",
-  "compatibleCoreVersion": "8.9"
+  "compatibleCoreVersion": "11"
 }
