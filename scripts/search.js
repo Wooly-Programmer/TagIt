@@ -148,25 +148,9 @@ export class TagItSearch extends FormApplication {
             );
 
             const dragData = {
-                id: a.id,
-                type: a.documentName
+                type: a.documentName,
+                uuid: a.uuid,
             };
-
-            if (a.compendium) {
-                dragData.pack = a.compendium;
-
-                $(item)
-                .attr('data-pack', a.compendium);
-
-                $(item).append(
-                    $('<div>')
-                    .addClass('entity-info')
-                    .append(
-                        $('<p>')
-                        .text(`(${a.compendium})`)
-                    )
-                );
-            }
 
             switch(a.documentName) {
                 case "JournalEntry":
@@ -176,6 +160,7 @@ export class TagItSearch extends FormApplication {
                     $(item)
                     .attr('draggable', 'true')
                     .on('dragstart', function (e) {
+                        console.log(dragData);
                         e.originalEvent.dataTransfer
                         .setData("text/plain",JSON.stringify(dragData))
                     });
