@@ -59,7 +59,7 @@ export class TagItIndex {
             .filter(compendium => TagItIndex.DocumentTypes.includes(compendium.documentName))
             .map(compendium => {
                 return {
-                    package: compendium.metadata.package,
+                    package: compendium.collection,
                     name: compendium.metadata.name,
                     documentName: compendium.documentName,
                     index: compendium.getIndex({fields: ["flags","img","thumb"]})
@@ -72,6 +72,7 @@ export class TagItIndex {
                 .map(document => {
                     return {
                         id: document.id,
+                        uuid: document.uuid,
                         name: document.name,
                         documentName: document.documentName,
                         tags: (document.data.flags?.tagit?.tags?.length > 0) ?
@@ -89,6 +90,7 @@ export class TagItIndex {
                 .map(document => {
                     return {
                         id: document.id,
+                        uuid: document.uuid,
                         name: document.name,
                         documentName: document.documentName,
                         tags: (document.data.flags?.tagit?.tags?.length > 0) ?
@@ -106,6 +108,7 @@ export class TagItIndex {
                 .map(document => {
                     return {
                         id: document.id,
+                        uuid: document.uuid,
                         name: document.name,
                         documentName: document.documentName,
                         tags: (document.data.flags?.tagit?.tags?.length > 0) ?
@@ -123,6 +126,7 @@ export class TagItIndex {
                 .map(document => {
                     return {
                         id: document.id,
+                        uuid: document.uuid,
                         name: document.name,
                         documentName: document.documentName,
                         tags: (document.data.flags?.tagit?.tags?.length > 0) ?
@@ -144,6 +148,7 @@ export class TagItIndex {
                     .map(document => {
                         return {
                             id: document._id,
+                            uuid: document.uuid,
                             name: document.name,
                             documentName: compendium.documentName,
                             tags: (document.flags?.tagit?.tags?.length > 0) ?
