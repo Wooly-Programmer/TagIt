@@ -147,6 +147,20 @@ export class TagItSearch extends FormApplication {
                 )
             );
 
+            if (a.compendium) {
+                $(item)
+                .attr('data-pack', a.compendium);
+
+                $(item).append(
+                    $('<div>')
+                    .addClass('entity-info')
+                    .append(
+                        $('<p>')
+                        .text(`(${a.compendium})`)
+                    )
+                );
+            }
+
             const dragData = {
                 type: a.documentName,
                 uuid: a.uuid,
